@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Monte a bateria</title>
+
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<main>
+		<div class="resultado">
+			<div class="resultado-bg"></div>
+			<div class="resultado-content">
+				<h1>Parabéns, você montou a bateria!</h1>
+				<p>Agora você pode tocar a sua bateria. Aperte a tecla que corresponde a parte da bateria que quer tocar:</p>
+				<canvas id='riveCanvas' width="512" height="512"></canvas>
+
+				<div class="tocar-partes">
+
+					<span class="tocar-parte-button" id="tocar-parte-bumbo">Tecla 1 = Bumbo</span>
+					<span class="tocar-parte-button" id="tocar-parte-caixa">Tecla 2 = Caixa</span>
+					<span class="tocar-parte-button" id="tocar-parte-chimbal">Tecla 3 = Chimbal</span>
+					<span class="tocar-parte-button" id="tocar-parte-prato">Tecla 4 = Prato</span>
+					<span class="tocar-parte-button" id="tocar-parte-tom-um">Tecla 5 = Tom 01</span>
+					<span class="tocar-parte-button" id="tocar-parte-tom-dois">Tecla 6 = Tom 02</span>
+					<span class="tocar-parte-button" id="tocar-parte-surdo">Tecla 7 = Surdo</span>
+				</div>
+				<p id="observacao">OBS: A função de tocar a bateria funciona apenas no computador.</p>
+
+				<audio id="audio-bateria-completa">
+					<source src="audio/bateria-completa.mp3" type="audio/mp3" />
+					Your browser does not support the audio tag.
+				</audio>
+				<div id="resultado-buttons">
+					<button id="tocar-bateria-button" onclick="tocarBateria()">&#9658 Ouça uma bateria</button>
+					<button onclick="restart()">Recomeçar</button>
+				</div>
+
+			</div>
+		</div>
+		<header>
+			<h1 class="title">Monte a bateria</h1>
+			<p class="instrucao">Clique nas partes da bateria na ordem correta</p>
+		</header>
+
+		<div class="sections-wrapper">
+			<section>
+				<div class="partes-da-bateria">
+					<audio id="audio-bumbo">
+						<source src="audio/bumbo.wav" type="audio/wav" />
+						Your browser does not support the audio tag.
+					</audio>
+					<button class="parte-da-bateria-button" onclick="showBumbo()">
+						<img class="parte-da-bateria" src="img/bumbo.svg" alt="bumbo" />
+						<span>Bumbo</span>
+					</button>
+
+					<audio id="audio-caixa">
+						<source src="audio/caixa.wav" type="audio/wav" />
+						Your browser does not support the audio tag.
+					</audio>
+					<button class="parte-da-bateria-button" onclick="showCaixa()">
+						<img class="parte-da-bateria" src="img/caixa.svg" alt="caixa" />
+						<span>Caixa</span>
+					</button>
+
+					<audio id="audio-tom-1">
+						<source src="audio/tom-1.mp3" type="audio/mp3" />
+						Your browser does not support the audio tag.
+					</audio>
+					<button class="parte-da-bateria-button" onclick="showTomUm()">
+						<img class="parte-da-bateria" src="img/tom-um.svg" alt="tom um" />
+						<span>Tom 01</span>
+					</button>
+
+					<audio id="audio-tom-2">
+						<source src="audio/tom-2.mp3" type="audio/mp3" />
+						Your browser does not support the audio tag.
+					</audio>
+					<button class="parte-da-bateria-button" onclick="showTomDois()">
+						<img class="parte-da-bateria" src="img/tom-dois.svg" alt="tom dois" />
+						<span>Tom 02</span>
+					</button>
+
+					<audio id="audio-surdo">
+						<source src="audio/surdo.mp3" type="audio/mp3" />
+						Your browser does not support the audio tag.
+					</audio>
+					<button class="parte-da-bateria-button" onclick="showSurdo()">
+						<img class="parte-da-bateria" src="img/surdo.svg" alt="surdo" />
+						<span>Surdo</span>
+					</button>
+
+					<audio id="audio-chimbal">
+						<source src="audio/chimbal.wav" type="audio/wav" />
+						Your browser does not support the audio tag.
+					</audio>
+					<button class="parte-da-bateria-button" onclick="showChimbal()">
+						<img class="parte-da-bateria" src="img/chimbal.svg" alt="chimbal" />
+						<span>Chimbal</span>
+					</button>
+
+					<audio id="audio-prato">
+						<source src="audio/prato.wav" type="audio/wav" />
+						Your browser does not support the audio tag.
+					</audio>
+					<button class="parte-da-bateria-button" onclick="showPrato()">
+						<img class="parte-da-bateria" src="img/prato.svg" alt="prato" />
+						<span>Prato</span>
+					</button>
+
+					<button class="parte-da-bateria-button" onclick="showSuporteCaixa()">
+						<img class="parte-da-bateria" src="img/suporte-caixa.svg" alt="suporte caixa" />
+						<span>Suporte da caixa</span>
+					</button>
+
+					<button class="parte-da-bateria-button" onclick="showSuporteTons()">
+						<img class="parte-da-bateria" src="img/suporte-tons.svg" alt="suporte tons" />
+						<span>Suporte dos tons</span>
+					</button>
+
+					<button class="parte-da-bateria-button" onclick="showSuporteSurdo()">
+						<img class="parte-da-bateria" src="img/suporte-surdo.svg" alt="suporte surdo" />
+						<span>Suporte do surdo</span>
+					</button>
+
+					<button class="parte-da-bateria-button" onclick="showSuporteChimbal()">
+						<img class="parte-da-bateria" src="img/suporte-chimbal.svg" alt="suporte chimbal" />
+						<span>Pedestal do chimbal</span>
+					</button>
+
+					<button class="parte-da-bateria-button" onclick="showSuportePrato()">
+						<img class="parte-da-bateria" src="img/suporte-prato.svg" alt="suporte prato" />
+						<span>Pedestal do prato</span>
+					</button>
+				</div>
+			</section>
+			<section class="bateria-completa">
+				<img class="tom-um" src="img/tom-um-bateria-completa.svg" alt="tom um" />
+				<img class="tom-dois" src="img/tom-dois-bateria-completa.svg" alt="tom dois" />
+				<img class="suporte-tons" src="img/suporte-tons-bateria-completa.svg" alt="suporte tons" />
+
+				<img class="caixa" src="img/caixa-bateria-completa.svg" alt="caixa" />
+				<img class="suporte-caixa" src="img/suporte-caixa-bateria-completa.svg" alt="suporte caixa" />
+				<img class="surdo" src="img/surdo-bateria-completa.svg" alt="surdo" />
+				<img class="suporte-surdo" src="img/suporte-surdo-bateria-completa.svg" alt="suporte surdo" />
+				<img class="prato" src="img/prato-bateria-completa.svg" alt="prato" />
+				<img class="suporte-prato" src="img/suporte-prato-bateria-completa.svg" alt="suporte prato" />
+
+				<img class="suporte-chimbal" src="img/suporte-chimbal-bateria-completa.svg" alt="suporte chimbal" />
+				<img class="chimbal" src="img/chimbal-bateria-completa.svg" alt="chimbal" />
+				<img class="bumbo" src="img/bumbo-bateria-completa.svg" alt="bumbo" />
+			</section>
+		</div>
+	</main>
+
+	<script src="https://unpkg.com/rive-canvas@0.6.7/rive.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

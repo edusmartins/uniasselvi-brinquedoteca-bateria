@@ -1,0 +1,265 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* html,
+* body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #fcdab9;
+}
+
+* main {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+* main .resultado {
+  z-index: 10;
+  visibility: hidden;
+  position: absolute;
+  width: calc(100vw + 16px);
+  height: calc(100vh + 8px);
+}
+
+* main .resultado .resultado-bg {
+  width: calc(100vw + 16px);
+  height: calc(100vh + 8px);
+  position: absolute;
+  background-color: #000;
+  opacity: 0.7;
+}
+
+* main .resultado .resultado-content {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+* main .resultado .resultado-content .tocar-partes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+* main .resultado .resultado-content .tocar-partes .tocar-parte-button {
+  background-color: #000;
+  padding: 8px 16px;
+  border-radius: 5px;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  font-size: 12px;
+}
+
+* main .resultado .resultado-content .tocar-partes .tocar-parte-button.play {
+  background-color: #464646;
+}
+
+* main .resultado .resultado-content #observacao {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+* main .resultado .resultado-content #resultado-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+}
+
+* main .resultado .resultado-content #resultado-buttons button {
+  padding: 8px 16px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+  font-weight: bold;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+* main .resultado .resultado-content #resultado-buttons button:hover {
+  background-color: #dfdfdf;
+  cursor: pointer;
+}
+
+* main .resultado.visible {
+  visibility: visible;
+}
+
+* main header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+* main header .title {
+  color: #99774b;
+  margin-bottom: 0;
+}
+
+* main header .instrucao {
+  padding: 8px 16px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+  font-weight: bold;
+}
+
+* main header .instrucao.erro {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+* main header .instrucao.acerto {
+  background-color: #228b22;
+  color: #fff;
+}
+
+* main header .instrucao.hidden {
+  visibility: hidden;
+}
+
+* main .sections-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+* main .sections-wrapper section {
+  padding: 16px;
+  max-width: 50vw;
+  max-height: 70vh;
+}
+
+* main .sections-wrapper section .partes-da-bateria {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 16px;
+  border: 3px solid #99774b;
+  border-radius: 10px;
+  background-color: #fff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 8px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+* main .sections-wrapper section .partes-da-bateria .parte-da-bateria-button {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  padding: 16px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+* main .sections-wrapper section .partes-da-bateria .parte-da-bateria-button .parte-da-bateria {
+  width: 100%;
+  height: 50%;
+}
+
+* main .sections-wrapper .bateria-completa {
+  padding: 32px;
+  position: relative;
+  width: 50vw;
+  height: 75%;
+}
+
+* main .sections-wrapper .bateria-completa img {
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  visibility: hidden;
+}
+
+* main .sections-wrapper .bateria-completa .visible {
+  visibility: visible;
+}
+
+@media only screen and (max-width: 700px) {
+  .sections-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .sections-wrapper section {
+    max-width: 100vw;
+    max-height: 50vh;
+  }
+  .sections-wrapper .bateria-completa {
+    width: 100%;
+    height: 30vh;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

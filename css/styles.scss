@@ -1,0 +1,221 @@
+* {
+	box-sizing: border-box;
+
+	html,
+	body {
+		margin: 0;
+		font-family: sans-serif;
+		background-color: #fcdab9;
+	}
+
+	main {
+		height: 100vh;
+		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		overflow-x: hidden;
+		position: relative;
+
+		.resultado {
+			z-index: 10;
+			visibility: hidden;
+			position: absolute;
+			width: calc(100vw + 16px);
+			height: calc(100vh + 8px);
+
+			.resultado-bg {
+				width: calc(100vw + 16px);
+				height: calc(100vh + 8px);
+				position: absolute;
+				background-color: #000;
+				opacity: 0.7;
+			}
+
+			.resultado-content {
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				position: absolute;
+				width: 80%;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 16px;
+
+				color: #fff;
+				text-align: center;
+
+				.tocar-partes {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					justify-content: center;
+					gap: 16px;
+
+					margin-bottom: 16px;
+
+					.tocar-parte-button {
+						background-color: #000;
+						padding: 8px 16px;
+						border-radius: 5px;
+						transition: all 200ms ease-out;
+						font-size: 12px;
+
+						&.play {
+							background-color: rgb(70, 70, 70);
+						}
+					}
+				}
+
+				#observacao {
+					margin: 0 0 16px 0;
+					font-size: 14px;
+					font-weight: bold;
+				}
+
+				#resultado-buttons {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 16px;
+
+					button {
+						padding: 8px 16px;
+						background-color: #fff;
+						border-radius: 5px;
+						width: fit-content;
+						margin: 0;
+						font-weight: bold;
+						border: none;
+						font-size: 16px;
+						outline: none;
+
+						&:hover {
+							background-color: #dfdfdf;
+							cursor: pointer;
+						}
+					}
+				}
+			}
+
+			&.visible {
+				visibility: visible;
+			}
+		}
+
+		header {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			gap: 16px;
+
+			margin-bottom: 24px;
+
+			.title {
+				color: #99774b;
+				margin-bottom: 0;
+			}
+
+			.instrucao {
+				padding: 8px 16px;
+				background-color: #fff;
+				border-radius: 5px;
+				width: fit-content;
+				margin: 0;
+				font-weight: bold;
+
+				&.erro {
+					background-color: #ff0000;
+					color: #fff;
+				}
+
+				&.acerto {
+					background-color: #228b22;
+					color: #fff;
+				}
+
+				&.hidden {
+					visibility: hidden;
+				}
+			}
+		}
+
+		.sections-wrapper {
+			display: flex;
+
+			section {
+				padding: 16px;
+				max-width: 50vw;
+				max-height: 70vh;
+
+				.partes-da-bateria {
+					max-width: 100%;
+					max-height: 100%;
+					padding: 16px;
+					border: 3px solid #99774b;
+					border-radius: 10px;
+					background-color: #fff;
+
+					display: grid;
+					grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+					gap: 8px;
+
+					overflow-y: scroll;
+					overflow-x: hidden;
+
+					.parte-da-bateria-button {
+						width: 100%;
+						height: 100px;
+						overflow: hidden;
+						padding: 16px;
+						cursor: pointer;
+
+						display: flex;
+						align-items: center;
+						flex-direction: column;
+						justify-content: space-between;
+
+						.parte-da-bateria {
+							width: 100%;
+							height: 50%;
+						}
+					}
+				}
+			}
+
+			.bateria-completa {
+				padding: 32px;
+				position: relative;
+				width: 50vw;
+				height: 75%;
+
+				img {
+					width: 80%;
+					height: 100%;
+					position: absolute;
+					visibility: hidden;
+				}
+
+				.visible {
+					visibility: visible;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.sections-wrapper {
+		flex-direction: column;
+
+		section {
+			max-width: 100vw;
+			max-height: 50vh;
+		}
+
+		.bateria-completa {
+			width: 100%;
+			height: 30vh;
+		}
+	}
+}
