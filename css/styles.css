@@ -24,111 +24,6 @@
   position: relative;
 }
 
-* main .resultado {
-  z-index: 10;
-  visibility: hidden;
-  position: absolute;
-  width: calc(100vw + 16px);
-  height: calc(100vh + 8px);
-}
-
-* main .resultado .resultado-bg {
-  width: calc(100vw + 16px);
-  height: calc(100vh + 8px);
-  position: absolute;
-  background-color: #000;
-  opacity: 0.7;
-}
-
-* main .resultado .resultado-content {
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  position: absolute;
-  width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 16px;
-  color: #fff;
-  text-align: center;
-}
-
-* main .resultado .resultado-content .tocar-partes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-* main .resultado .resultado-content .tocar-partes .tocar-parte-button {
-  background-color: #000;
-  padding: 8px 16px;
-  border-radius: 5px;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  font-size: 12px;
-}
-
-* main .resultado .resultado-content .tocar-partes .tocar-parte-button.play {
-  background-color: #464646;
-}
-
-* main .resultado .resultado-content #observacao {
-  margin: 0 0 16px 0;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-* main .resultado .resultado-content #resultado-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 16px;
-}
-
-* main .resultado .resultado-content #resultado-buttons button {
-  padding: 8px 16px;
-  background-color: #fff;
-  border-radius: 5px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0;
-  font-weight: bold;
-  border: none;
-  font-size: 16px;
-  outline: none;
-}
-
-* main .resultado .resultado-content #resultado-buttons button:hover {
-  background-color: #dfdfdf;
-  cursor: pointer;
-}
-
-* main .resultado.visible {
-  visibility: visible;
-}
-
 * main header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -178,12 +73,126 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 * main .sections-wrapper section {
   padding: 16px;
-  max-width: 50vw;
-  max-height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+* main .sections-wrapper section .resultado {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+* main .sections-wrapper section .resultado .resultado-content {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  color: #000;
+  text-align: center;
+}
+
+* main .sections-wrapper section .resultado .resultado-content .tocar-partes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+* main .sections-wrapper section .resultado .resultado-content .tocar-partes .tocar-parte-button {
+  background-color: #000;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  font-size: 12px;
+}
+
+* main .sections-wrapper section .resultado .resultado-content .tocar-partes .tocar-parte-button.play {
+  background-color: #464646;
+}
+
+* main .sections-wrapper section .resultado .resultado-content #observacao {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+* main .sections-wrapper section .resultado .resultado-content #resultado-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+}
+
+* main .sections-wrapper section .resultado .resultado-content #resultado-buttons button {
+  padding: 8px 16px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+  font-weight: bold;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+* main .sections-wrapper section .resultado .resultado-content #resultado-buttons button:hover {
+  background-color: #dfdfdf;
+  cursor: pointer;
+}
+
+* main .sections-wrapper section .resultado.visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 * main .sections-wrapper section .partes-da-bateria {
@@ -198,6 +207,7 @@
   -ms-grid-columns: (minmax(100px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 8px;
+  display: none;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -228,22 +238,19 @@
   height: 50%;
 }
 
-* main .sections-wrapper .bateria-completa {
-  padding: 32px;
-  position: relative;
-  width: 50vw;
-  height: 75%;
+* main .sections-wrapper section .partes-da-bateria.visible {
+  display: -ms-grid;
+  display: grid;
 }
 
-* main .sections-wrapper .bateria-completa img {
-  width: 80%;
+* main .sections-wrapper .riveCanvas {
+  width: 100%;
   height: 100%;
-  position: absolute;
-  visibility: hidden;
+  min-height: 500px;
 }
 
-* main .sections-wrapper .bateria-completa .visible {
-  visibility: visible;
+* main .sections-wrapper .bateria-completa {
+  display: none;
 }
 
 @media only screen and (max-width: 700px) {
